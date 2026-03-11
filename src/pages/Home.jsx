@@ -57,9 +57,9 @@ const workingProcess = [
 ];
 
 const reels = [
-    { src: '/SnapInsta.to_AQM6VnEsQ6clqRYP_qzysG-ENkXB_krSW9Ejn0b5WedrVjORk3BJqA0ukD1n0txwzGaFRIExEZxIyratigGhmu60rdnoZW8RmMKyNww.mp4', label: 'Grand Celebration', poster: '/venue-suggestion.png' },
-    { src: '/SnapInsta.to_AQNbH72OQNrL2bbZOfLaEjoMa53v05GZtYoFxEnfUKLUWWXiNlrSnIAgjoXAgQjAcUDM32gWvq5m9umKLOuwYKhRbht2GsGySijNceM.mp4', label: 'Wedding Magic', poster: '/dream-decor.png' },
-    { src: '/SnapInsta.to_AQOOgJma500Ss5aPYz-Pk-VShloEXDErUz9M0BCyjE2dQq28ltaa03EZeV1gPRim812DM8Z72X42gSqGYi2cnW4W.mp4', label: 'Reception Night', poster: '/photography-new.png' },
+    { src: '/video1.mp4', label: 'Grand Celebration', poster: '/venue-suggestion.png' },
+    { src: '/video2.mp4', label: 'Wedding Magic', poster: '/dream-decor.png' },
+    { src: '/video3.mp4', label: 'Reception Night', poster: '/photography-new.png' },
 ];
 
 export default function Home() {
@@ -274,12 +274,11 @@ export default function Home() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {reels.map((reel, i) => (
                             <div
-                                key={reel.id}
+                                key={i}
                                 className="reveal relative aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer"
                                 style={{ transitionDelay: `${i * 0.15}s` }}
                             >
                                 <SmartVideo
-                                    id={reel.id}
                                     src={reel.src}
                                     poster={reel.poster}
                                     label={reel.label}

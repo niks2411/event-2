@@ -2,8 +2,10 @@ import React, { useRef, useEffect, useState } from 'react';
 
 export default function SmartVideo({ src, id, poster, className, label }) {
     const containerRef = useRef(null);
+    const videoRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -24,7 +26,15 @@ export default function SmartVideo({ src, id, poster, className, label }) {
         };
     }, []);
 
-    const [isMuted, setIsMuted] = useState(true);
+    // Play/Pause based on visibility
+    useEffect(() => {
+        if (!videoRef.current) return;
+        if (isVisible) {
+            videoRef.current.play().catch(() => {}); 
+        } else {
+            videoRef.current.pause();
+        }
+    }, [isVisible]);
 
     // YouTube Embed URL Builder
     const getYouTubeUrl = (videoId) => {
@@ -33,44 +43,45 @@ export default function SmartVideo({ src, id, poster, className, label }) {
 
     return (
         <div ref={containerRef} className={`relative w-full h-full overflow-hidden bg-charcoal/20 ${className}`}>
-            {/* Poster appears while loading or before intersection */}
-            {(!isLoaded || !isVisible) && poster && (
+            {/* Poster layer: Only show for YouTube or if no local video is available */}
+            {poster && id && (
                 <img
                     src={poster}
                     alt={label}
-                    className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-700"
+                    className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-300 ${isLoaded ? 'opacity-0' : 'opacity-100'}`}
                     loading="lazy"
                 />
             )}
 
-            {isVisible ? (
-                id ? (
-                    // YouTube Mode
+            {id ? (
+                // YouTube Mode
+                isVisible && (
                     <iframe
-                        key={`${id}-${isMuted}`} // Force reload on mute change for YouTube (simple way without API)
-                        className={`w-full h-full object-cover transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        key={`${id}-${isMuted}`} 
+                        className={`relative w-full h-full object-cover z-10 transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                         src={getYouTubeUrl(id)}
                         title={label}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         onLoad={() => setIsLoaded(true)}
-                        style={{ width: '100%', height: '115%', marginTop: '-7.5%' }} // Zoom to hide controls
-                    />
-                ) : (
-                    // Local MP4 Mode
-                    <video
-                        src={src}
-                        className={`w-full h-full object-cover transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                        onPlaying={() => setIsLoaded(true)}
-                        onLoadedData={() => setIsLoaded(true)}
-                        autoPlay
-                        muted={isMuted}
-                        loop
-                        playsInline
-                        preload="metadata"
+                        style={{ width: '100%', height: '115%', marginTop: '-7.5%' }} 
                     />
                 )
-            ) : null}
+            ) : (
+                // Local MP4 Mode: Play instantly
+                <video
+                    ref={videoRef}
+                    src={src}
+                    className="relative w-full h-full object-cover z-10" 
+                    onPlaying={() => setIsLoaded(true)}
+                    onLoadedData={() => setIsLoaded(true)}
+                    autoPlay
+                    muted={isMuted}
+                    loop
+                    playsInline
+                    preload="auto"
+                />
+            )}
 
             {/* Sound Toggle Button */}
             <button
