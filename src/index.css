@@ -2,12 +2,12 @@
 
 /* ========== CUSTOM THEME ========== */
 @theme {
-  --color-gold: #C9A96E;
-  --color-gold-light: #E8D5A8;
-  --color-gold-dark: #A78B55;
-  --color-blush: #F5E6E0;
-  --color-blush-dark: #E8C8BC;
-  --color-cream: #FFF8F0;
+  --color-gold: #C4A265;
+  --color-gold-light: #E0CDA0;
+  --color-gold-dark: #A6874E;
+  --color-blush: #F2E4D8;
+  --color-blush-dark: #E5CBBD;
+  --color-cream: #F5EDE3;
   --color-charcoal: #2C2C2C;
   --color-charcoal-light: #4A4A4A;
   --font-heading: 'Playfair Display', serif;
@@ -32,7 +32,7 @@
   body {
     font-family: var(--font-body);
     color: var(--color-charcoal);
-    background: #fff;
+    background: #F1E0CF;
     overflow-x: hidden;
   }
 
@@ -45,7 +45,7 @@
   }
 
   ::selection {
-    background: rgba(201, 169, 110, 0.3);
+    background: rgba(196, 162, 101, 0.3);
     color: var(--color-charcoal);
   }
 }

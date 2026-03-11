@@ -7,16 +7,16 @@ const categories = ['All', 'Weddings', 'Engagement', 'Haldi', 'Cinematic Reels',
 
 const portfolioItems = [
     { src: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg', cat: 'Weddings', title: 'Regal Wedding Decor', h: 'h-80' },
-    { src: '/SnapInsta.to_AQM6VnEsQ6clqRYP_qzysG-ENkXB_krSW9Ejn0b5WedrVjORk3BJqA0ukD1n0txwzGaFRIExEZxIyratigGhmu60rdnoZW8RmMKyNww.mp4', cat: 'Cinematic Reels', title: 'Grand Celebration Highlight', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg' },
+    { src: '/video2.mp4', cat: 'Cinematic Reels', title: 'Grand Celebration Highlight', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg' },
     { src: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg', cat: 'Engagement', title: 'Romantic Setup', h: 'h-64' },
-    { src: '/SnapInsta.to_AQNbH72OQNrL2bbZOfLaEjoMa53v05GZtYoFxEnfUKLUWWXiNlrSnIAgjoXAgQjAcUDM32gWvq5m9umKLOuwYKhRbht2GsGySijNceM.mp4', cat: 'Cinematic Reels', title: 'Wedding Magic', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg' },
     { src: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg', cat: 'Weddings', title: 'Luxury Mantle', h: 'h-72' },
-    { src: '/SnapInsta.to_AQOOgJma500Ss5aPYz-Pk-VShloEXDErUz9M0BCyjE2dQq28ltaa03EZeV1gPRim812DM8Z72X42gSqGYi2cnW4W.mp4', cat: 'Cinematic Reels', title: 'Reception Highlights', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg' },
+    { src: '/video1.mp4', cat: 'Cinematic Reels', title: 'Reception Highlights', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg' },
     { src: '/SnapInsta.to_469184825_18381580297097874_8533222688974240097_n_750.jpg', cat: 'Weddings', title: 'Evening Vibe', h: 'h-64' },
     { src: '/SnapInsta.to_471711385_18475536073002324_6102271118363019889_n_750.jpg', cat: 'Haldi', title: 'Vibrant Haldi Decor', h: 'h-80' },
     { src: '/SnapInsta.to_471969805_18475535794002324_320309082959194364_n_750.jpg', cat: 'Weddings', title: 'Grand Entry', h: 'h-72' },
     { src: '/SnapInsta.to_514565952_18564927139058263_1903189261584178576_n_750.jpg', cat: 'Weddings', title: 'Elegant Frame', h: 'h-64' },
     { src: '/SnapInsta.to_582015082_18541259023021250_1273442079057468699_n_750.jpg', cat: 'Haldi', title: 'Bloom Ceremony', h: 'h-72' },
+    { src: '/video3.mp4', cat: 'Cinematic Reels', title: 'Wedding Magic', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg' },
     { src: '/SnapInsta.to_625047285_18111301408629000_689735211486510512_n_750.jpg', cat: 'Weddings', title: 'Traditional Detail', h: 'h-80' },
 ];
 
@@ -63,7 +63,7 @@ export default function Portfolio() {
                                 className={`px-8 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300
                                     ${active === cat
                                         ? 'bg-gold text-white shadow-lg shadow-gold/20 scale-105'
-                                        : 'bg-white text-charcoal border border-gold/10 hover:border-gold/30 hover:bg-gold/5'
+                                        : 'bg-[#F1E0CF] text-charcoal border border-gold/10 hover:border-gold/30 hover:bg-gold/5'
                                     }`}
                             >
                                 {cat}

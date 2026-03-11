@@ -104,7 +104,7 @@ export default function FAQ() {
                                     return (
                                         <div
                                             key={idx}
-                                            className={`bg-white rounded-xl shadow-sm gold-border overflow-hidden transition-all duration-300
+                                            className={`bg-[#F1E0CF] rounded-xl shadow-sm gold-border overflow-hidden transition-all duration-300
                                                 ${openIndex === idx ? 'shadow-md' : ''}`}
                                         >
                                             <button
@@ -129,7 +129,7 @@ export default function FAQ() {
                     ))}
 
                     {/* CTA */}
-                    <div className="reveal text-center mt-8 p-10 bg-white rounded-2xl gold-border shadow-sm">
+                    <div className="reveal text-center mt-8 p-10 bg-[#F1E0CF] rounded-2xl gold-border shadow-sm">
                         <h3 className="text-xl font-bold text-charcoal mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
                             Still have questions?
                         </h3>

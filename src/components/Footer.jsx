@@ -88,7 +88,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-charcoal text-white/80 relative overflow-hidden">
+        <footer className="bg-[#F1E0CF] text-charcoal/80 relative overflow-hidden">
             {/* Top gradient divider */}
             <div className="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
@@ -102,13 +102,13 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <Link to="/" className="inline-block mb-5 group">
-                            <img src="/logo-white.png" alt="LRWC" className="h-20 w-auto object-contain mb-3 transition-transform duration-300 group-hover:scale-105" />
-                            <p className="text-gold text-lg font-bold" style={{ fontFamily: 'var(--font-heading)' }}>LRWC</p>
+                            <img src="/logo.jpeg" alt="LRWC" className="h-16 w-auto object-contain mb-3 transition-transform duration-300 group-hover:scale-105 rounded-lg" />
+                            <p className="text-gold text-lg font-bold" style={{ fontFamily: 'var(--font-heading)' }}>LRWC-Lalita Raghav Wedding Consultants</p>
                         </Link>
-                        <p className="text-sm leading-relaxed text-white/40 mb-3 italic">
+                        <p className="text-sm leading-relaxed text-charcoal/50 mb-3 italic">
                             Wedding & Event Planning Experts
                         </p>
-                        <p className="text-sm leading-relaxed text-white/40 mb-6">
+                        <p className="text-sm leading-relaxed text-charcoal/50 mb-6">
                             Founded 2020 | 100+ Events Delivered. We don't just plan events — we create experiences.
                         </p>
                         <div className="flex gap-2.5">
@@ -116,8 +116,8 @@ export default function Footer() {
                                 <a
                                     key={social.label}
                                     href={social.href}
-                                    className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center
-                                        text-white/40 hover:text-white hover:border-gold hover:bg-gold/20
+                                    className="w-10 h-10 rounded-full border border-charcoal/15 flex items-center justify-center
+                                        text-charcoal/50 hover:text-gold hover:border-gold hover:bg-gold/20
                                         transition-all duration-300 shadow-sm"
                                     aria-label={social.label}
                                 >
@@ -129,7 +129,7 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-6 relative inline-block">
+                        <h4 className="text-charcoal font-semibold text-sm tracking-wider uppercase mb-6 relative inline-block">
                             Quick Links
                             <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-gold to-transparent" />
                         </h4>
@@ -138,7 +138,7 @@ export default function Footer() {
                                 <li key={link.path}>
                                     <Link
                                         to={link.path}
-                                        className="text-sm text-white/40 hover:text-gold hover:pl-2 transition-all duration-300 inline-block"
+                                        className="text-sm text-charcoal/50 hover:text-gold hover:pl-2 transition-all duration-300 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -149,7 +149,7 @@ export default function Footer() {
 
                     {/* Services */}
                     <div className="lg:col-span-2">
-                        <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-6 relative block text-center">
+                        <h4 className="text-charcoal font-semibold text-sm tracking-wider uppercase mb-6 relative block text-center">
                             Our Services
                             <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-gold to-transparent" />
                         </h4>
@@ -158,7 +158,7 @@ export default function Footer() {
                                 <li key={service}>
                                     <Link
                                         to="/services"
-                                        className="text-sm text-white/40 hover:text-gold hover:pl-2 transition-all duration-300 inline-block"
+                                        className="text-sm text-charcoal/50 hover:text-gold hover:pl-2 transition-all duration-300 inline-block"
                                     >
                                         {service}
                                     </Link>
@@ -169,11 +169,11 @@ export default function Footer() {
 
                     {/* Contact + Newsletter */}
                     <div>
-                        <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-6 relative inline-block">
+                        <h4 className="text-charcoal font-semibold text-sm tracking-wider uppercase mb-6 relative inline-block">
                             Get In Touch
                             <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-gold to-transparent" />
                         </h4>
-                        <div className="space-y-4 text-sm text-white/40 mb-8">
+                        <div className="space-y-4 text-sm text-charcoal/50 mb-8">
                             <div className="flex items-start gap-4">
                                 <span className="w-9 h-9 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold flex-shrink-0 mt-0.5 shadow-sm">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@ export default function Footer() {
                                     </svg>
                                 </span>
                                 <div className="leading-relaxed">
-                                    Faridabad, Haryana<br />
+                                    Gurugram, Haryana<br />
                                     <span className="text-[10px] text-gold/60 uppercase tracking-widest">(Serving All Over India)</span>
                                 </div>
                             </div>
@@ -197,15 +197,15 @@ export default function Footer() {
                         </div>
 
                         {/* Newsletter */}
-                        <h5 className="text-white text-xs tracking-wider uppercase mb-3 font-semibold">Newsletter</h5>
+                        <h5 className="text-charcoal text-xs tracking-wider uppercase mb-3 font-semibold">Newsletter</h5>
                         <form onSubmit={handleSubscribe} className="flex">
                             <input
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Your email"
-                                className="flex-1 px-3 py-2.5 bg-white/5 border border-white/10 rounded-l-xl text-sm text-white
-                                    placeholder-white/25 focus:outline-none focus:border-gold/40 focus:bg-white/8 transition-all duration-300"
+                                className="flex-1 px-3 py-2.5 bg-charcoal/5 border border-charcoal/15 rounded-l-xl text-sm text-charcoal
+                                    placeholder-charcoal/30 focus:outline-none focus:border-gold/40 focus:bg-charcoal/8 transition-all duration-300"
                             />
                             <button
                                 type="submit"
@@ -223,12 +223,12 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-white/8 relative z-10">
+            <div className="border-t border-charcoal/10 relative z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-white/25">
+                    <p className="text-xs text-charcoal/35">
                         © 2026 Lalita Raghav Wedding Consultants- LRWC. All rights reserved.
                     </p>
-                    <div className="flex gap-6 text-xs text-white/25">
+                    <div className="flex gap-6 text-xs text-charcoal/35">
                         <a href="#" className="hover:text-gold transition-colors duration-300">Privacy Policy</a>
                         <a href="#" className="hover:text-gold transition-colors duration-300">Terms of Service</a>
                         <a href="#" className="hover:text-gold transition-colors duration-300">Cookie Policy</a>

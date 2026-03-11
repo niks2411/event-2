@@ -77,7 +77,7 @@ export default function Book() {
                                 </p>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-3xl shadow-xl gold-border space-y-6">
+                            <form onSubmit={handleSubmit} className="bg-[#F1E0CF] p-8 md:p-12 rounded-3xl shadow-xl gold-border space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
                                         <label className="block text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em] mb-2">Full Name *</label>

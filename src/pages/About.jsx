@@ -9,7 +9,7 @@ const timelineData = [
     {
         title: '2020',
         content: (
-            <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
+            <div className="bg-[#F1E0CF] p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>The Beginning</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
                     LRWC was founded with a clear vision: to redefine luxury event planning all over India.
@@ -21,7 +21,7 @@ const timelineData = [
     {
         title: '2021',
         content: (
-            <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
+            <div className="bg-[#F1E0CF] p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Rapid Growth</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
                     Successfully planned and executed our first 20+ events, ranging from intimate home ceremonies to grand outdoor celebrations.
@@ -38,7 +38,7 @@ const timelineData = [
     {
         title: '2022',
         content: (
-            <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d text-left">
+            <div className="bg-[#F1E0CF] p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d text-left">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Expansion Across India</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
                     We expanded our operations to cover the entire country, establishing a strong footprint in premium wedding markets all over India.
@@ -49,7 +49,7 @@ const timelineData = [
     {
         title: '2023',
         content: (
-            <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
+            <div className="bg-[#F1E0CF] p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>The 50+ Milestone</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
                     Reaching our 50th event was a proud moment. We became known for our attention to detail and flawless execution.
@@ -63,7 +63,7 @@ const timelineData = [
     {
         title: '2024',
         content: (
-            <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
+            <div className="bg-[#F1E0CF] p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Premium Identity</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
                     Recognized as a trusted premium brand. We leveled up our design capabilities and introduced specialized effects and luxury hospitality services.
@@ -74,7 +74,7 @@ const timelineData = [
     {
         title: '2025',
         content: (
-            <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
+            <div className="bg-[#F1E0CF] p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>100+ Experiences</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
                     Proudly delivered over 100+ unforgettable experiences. Our journey continues with a commitment to making every celebration legendary.
@@ -153,7 +153,7 @@ export default function About() {
             </section>
 
             {/* Founder Section */}
-            <section className="py-28 bg-white relative overflow-hidden">
+            <section className="py-28 bg-[#F1E0CF] relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="reveal-left order-2 lg:order-1">
@@ -206,7 +206,7 @@ export default function About() {
             <section className="py-28 bg-cream relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <div className="reveal p-10 bg-white rounded-2xl gold-border card-3d hover:-translate-y-2 transition-all duration-500">
+                        <div className="reveal p-10 bg-[#F1E0CF] rounded-2xl gold-border card-3d hover:-translate-y-2 transition-all duration-500">
                             <div className="icon-badge icon-badge-lg mb-5">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
@@ -217,7 +217,7 @@ export default function About() {
                                 To deliver stress-free, beautifully managed events that create lifelong memories through creativity and precision.
                             </p>
                         </div>
-                        <div className="reveal p-10 bg-white rounded-2xl gold-border card-3d hover:-translate-y-2 transition-all duration-500" style={{ transitionDelay: '0.15s' }}>
+                        <div className="reveal p-10 bg-[#F1E0CF] rounded-2xl gold-border card-3d hover:-translate-y-2 transition-all duration-500" style={{ transitionDelay: '0.15s' }}>
                             <div className="icon-badge icon-badge-lg mb-5">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />

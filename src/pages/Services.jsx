@@ -184,7 +184,7 @@ export default function Services() {
                         {services.map((s, i) => (
                             <div
                                 key={s.title}
-                                className={`reveal bg-white rounded-3xl overflow-hidden shadow-lg border border-gold/10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col ${s.gallery ? 'cursor-pointer' : ''}`}
+                                className={`reveal bg-[#F1E0CF] rounded-3xl overflow-hidden shadow-lg border border-gold/10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col ${s.gallery ? 'cursor-pointer' : ''}`}
                                 style={{ transitionDelay: `${i * 0.05}s` }}
                                 onClick={() => s.gallery && openGallery(s)}
                             >

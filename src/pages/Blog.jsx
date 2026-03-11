@@ -51,7 +51,7 @@ export default function Blog() {
                         {posts.map((post, i) => (
                             <article
                                 key={post.title}
-                                className="reveal group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl
+                                className="reveal group bg-[#F1E0CF] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl
                                     transition-all duration-500 hover:-translate-y-3 gold-border card-3d"
                                 style={{ transitionDelay: `${i * 0.08}s` }}
                             >

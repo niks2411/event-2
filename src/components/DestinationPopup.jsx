@@ -16,13 +16,13 @@ export default function DestinationPopup() {
 
     return (
         <div className={`fixed bottom-6 right-6 z-[999] max-w-[340px] w-full mx-4 sm:mx-0 transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="bg-[#1a1a1a]/95 backdrop-blur-xl border border-gold/30 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#F1E0CF] to-[#E8D1B8] backdrop-blur-xl border border-gold/40 p-6 rounded-2xl shadow-2xl relative overflow-hidden">
                 {/* Decorative glow */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 <button
                     onClick={() => setIsVisible(false)}
-                    className="absolute top-3 right-3 text-white/30 hover:text-white transition-colors p-1"
+                    className="absolute top-3 right-3 text-charcoal/30 hover:text-charcoal transition-colors p-1"
                     aria-label="Close"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -33,14 +33,14 @@ export default function DestinationPopup() {
                 <div className="flex gap-4">
                     <div className="shrink-0">
                         <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center overflow-hidden">
-                            <img src="/lrwc-logo.png" alt="LRWC" className="w-8 h-8 object-contain" />
+                            <img src="/logo.jpeg" alt="LRWC" className="w-8 h-8 object-contain rounded" />
                         </div>
                     </div>
                     <div>
-                        <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
+                        <h3 className="text-charcoal font-bold text-lg mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
                             Destination Wedding?
                         </h3>
-                        <p className="text-white/60 text-xs leading-relaxed mb-4">
+                        <p className="text-charcoal/60 text-xs leading-relaxed mb-4">
                             Looking to tie the knot in a dream location? Let's plan your perfect getaway celebration.
                         </p>
                         <Link
@@ -52,7 +52,7 @@ export default function DestinationPopup() {
                         </Link>
                         <button
                             onClick={() => setIsVisible(false)}
-                            className="block w-full text-center mt-3 text-[10px] text-white/30 hover:text-white/60 transition-colors uppercase tracking-wider"
+                            className="block w-full text-center mt-3 text-[10px] text-charcoal/30 hover:text-charcoal/60 transition-colors uppercase tracking-wider"
                         >
                             Maybe Later
                         </button>

@@ -125,14 +125,14 @@ export default function Contact() {
 
                         {/* Info */}
                         <div className="reveal-right space-y-8">
-                            <div className="p-8 bg-white rounded-2xl shadow-md gold-border card-3d">
+                            <div className="p-8 bg-[#F1E0CF] rounded-2xl shadow-md gold-border card-3d">
                                 <h3 className="text-xl font-bold text-charcoal mb-6" style={{ fontFamily: 'var(--font-heading)' }}>Contact Information</h3>
                                 <div className="space-y-6 text-sm text-charcoal-light/65">
                                     <div className="flex items-start gap-4">
                                         <span className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-sm flex-shrink-0 mt-0.5">📍</span>
                                         <div>
                                             <p className="font-bold text-charcoal mb-0.5 text-base uppercase tracking-wider">Location</p>
-                                            <p className="text-lg">Faridabad, Haryana<br /><span className="text-gold font-semibold">(Serving All Over India)</span></p>
+                                            <p className="text-lg">Gurugram, Haryana<br /><span className="text-gold font-semibold">(Serving All Over India)</span></p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">

@@ -121,7 +121,7 @@ export default function Home() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ 
+                            transition={{
                                 opacity: { duration: 1.5, ease: "easeInOut" }
                             }}
                             className="absolute inset-0"
@@ -178,7 +178,7 @@ export default function Home() {
                     <div className="mt-12 animate-fade-in" style={{ animationDelay: '1.2s' }}>
                         <a href="tel:8826805646" className="inline-flex items-center gap-2 group">
                             <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-gold transition-colors duration-300">📞</span>
-                            <span className="text-white font-bold tracking-widest uppercase text-sm">Call Now: 8826805646</span>
+                            <span className="text-white font-bold tracking-widest uppercase text-sm">Call Now: +91 88268 05646</span>
                         </a>
                     </div>
                 </div>
@@ -209,7 +209,7 @@ export default function Home() {
                         {servicesList.map((s, i) => (
                             <div
                                 key={s.title}
-                                className={`reveal group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl
+                                className={`reveal group bg-[#F1E0CF] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl
                                     transition-all duration-500 hover:-translate-y-3 gold-border card-3d ${s.gallery ? 'cursor-pointer' : ''}`}
                                 style={{ transitionDelay: `${i * 0.08}s` }}
                                 onClick={() => s.gallery && openGallery(s)}
@@ -236,7 +236,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>            {/* ═══════════ MASONRY GALLERY ═══════════ */}
-            <section className="py-28 bg-white relative overflow-hidden">
+            <section className="py-28 bg-[#F1E0CF] relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16 reveal">
                         <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>Visual Journey</p>
@@ -295,9 +295,9 @@ export default function Home() {
                         {/* Image Side */}
                         <div className="reveal-left lg:w-5/12">
                             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[450px] md:h-[550px]">
-                                <OptimizedImage 
-                                    src="/homebg2.webp" 
-                                    alt="Destination Wedding" 
+                                <OptimizedImage
+                                    src="/homebg2.webp"
+                                    alt="Destination Wedding"
                                     className="w-full h-full object-cover"
                                     containerClassName="h-full"
                                 />
@@ -323,9 +323,9 @@ export default function Home() {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                                 {whyUs.map((item, i) => (
-                                    <div 
-                                        key={item.title} 
-                                        className="reveal flex gap-4 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gold/10 group"
+                                    <div
+                                        key={item.title}
+                                        className="reveal flex gap-4 p-4 rounded-xl hover:bg-[#F1E0CF] hover:shadow-md transition-all duration-300 border border-transparent hover:border-gold/10 group"
                                         style={{ transitionDelay: `${i * 0.1}s` }}
                                     >
                                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300">
@@ -340,7 +340,7 @@ export default function Home() {
                                     </div>
                                 ))}
                             </div>
-                            
+
                             <div className="mt-12 flex flex-wrap gap-8 pt-8 border-t border-gold/10">
                                 <div ref={ref1} className="reveal">
                                     <p className="text-3xl font-bold gold-text" style={{ fontFamily: 'var(--font-heading)' }}>{count1}+</p>
@@ -352,7 +352,7 @@ export default function Home() {
                                 </div>
                                 <div className="reveal bg-charcoal text-white px-5 py-2.5 rounded-xl border border-gold/20 flex items-center gap-3">
                                     <p className="text-2xl font-bold gold-text leading-none">{count3}%</p>
-                                    <p className="text-[9px] uppercase tracking-[0.1em] opacity-40 leading-tight">Client<br/>Satisfaction</p>
+                                    <p className="text-[9px] uppercase tracking-[0.1em] opacity-40 leading-tight">Client<br />Satisfaction</p>
                                 </div>
                             </div>
                         </div>
@@ -361,7 +361,7 @@ export default function Home() {
             </section>
 
             {/* ═══════════ WORKING PROCESS ═══════════ */}
-            <section className="py-28 bg-white relative overflow-hidden">
+            <section className="py-28 bg-[#F1E0CF] relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-20 reveal">
                         <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>How We Work</p>
@@ -400,7 +400,7 @@ export default function Home() {
                         {testimonials.map((t, i) => (
                             <div
                                 key={t.name}
-                                className="reveal relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500
+                                className="reveal relative p-8 bg-[#F1E0CF] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500
                                     hover:-translate-y-2 gold-border group"
                                 style={{ transitionDelay: `${i * 0.15}s` }}
                             >

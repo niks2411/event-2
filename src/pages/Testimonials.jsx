@@ -13,7 +13,7 @@ const testimonials = [
     { name: 'Megha & Sameer Jain', role: 'Cocktail Party — Gurgaon', rating: 5, text: 'A night of pure glamour! The bar management and hospitality were the highlights. Our friends are still raving about the experience.', initials: 'MJ', hasVideo: false },
     { name: 'Dr. Kavita Reddy', role: 'Medical Conference — Hyderabad', rating: 5, text: 'Precision planning at its best. LRWC team handled our 500+ delegates with zero glitches. Highly recommended for corporate excellence.', initials: 'KR', hasVideo: false },
     { name: 'Siddharth & Tanya Verma', role: 'Anniversary Celebration — Goa', rating: 5, text: 'An intimate beach celebration that felt like a dream. Every small detail reflected our journey. Simply beautiful.', initials: 'ST', hasVideo: false },
-    { name: 'Oberoi Family', role: 'Private Residence Function — Faridabad', rating: 5, text: 'They transformed our home into a royal palace for our daughter’s function. The decor was breathtaking and the service was warm and professional.', initials: 'OF', hasVideo: false },
+    { name: 'Oberoi Family', role: 'Private Residence Function — Delhi NCR', rating: 5, text: 'They transformed our home into a royal palace for our daughter’s function. The decor was breathtaking and the service was warm and professional.', initials: 'OF', hasVideo: false },
 ];
 
 export default function Testimonials() {
@@ -51,7 +51,7 @@ export default function Testimonials() {
                     </div>
 
                     {/* Slider */}
-                    <div className="reveal relative bg-white rounded-3xl shadow-xl overflow-hidden gold-border animate-border-glow">
+                    <div className="reveal relative bg-[#F1E0CF] rounded-3xl shadow-xl overflow-hidden gold-border animate-border-glow">
                         <div className="p-10 md:p-14 text-center relative">
                             <span className="quote-mark text-6xl">‟</span>
                             <div className="relative z-10">
@@ -88,7 +88,7 @@ export default function Testimonials() {
             </section>
 
             {/* All Reviews Grid */}
-            <section className="py-28 bg-white relative overflow-hidden">
+            <section className="py-28 bg-[#F1E0CF] relative overflow-hidden">
                 <div className="gradient-orb gradient-orb-gold w-80 h-80 bottom-0 left-0 animate-orb-float" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-20 reveal">

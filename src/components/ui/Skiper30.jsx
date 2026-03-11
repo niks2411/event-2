@@ -37,7 +37,7 @@ const Column = ({ images, y, className = "", offsetClass = "" }) => {
       style={{ y }}
     >
       {images.map((src, i) => (
-        <div key={i} className="relative h-[40vh] md:h-[60vh] w-full overflow-hidden shadow-2xl bg-white">
+        <div key={i} className="relative h-[40vh] md:h-[60vh] w-full overflow-hidden shadow-2xl bg-[#F1E0CF]">
           <img
             src={src}
             alt="portfolio"

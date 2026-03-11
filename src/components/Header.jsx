@@ -37,7 +37,7 @@ export default function Header() {
         <header
             className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isDark
                 ? 'bg-transparent'
-                : 'bg-white/90 backdrop-blur-xl shadow-[0_1px_30px_rgba(0,0,0,0.06)]'
+                : 'bg-[#F1E0CF]/95 backdrop-blur-xl shadow-[0_1px_30px_rgba(0,0,0,0.06)]'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,9 +45,9 @@ export default function Header() {
                     {/* Logo */}
                     <Link to="/" className="flex items-center group">
                         <img
-                            src={isDark ? "/logo-white.png" : "/logo-black.png"}
+                            src={isDark ? "/logo-removebg-preview.png" : "/logo.jpeg"}
                             alt="LRWC"
-                            className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${scrolled ? 'h-20' : 'h-28'}`}
+                            className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${isDark ? '' : 'rounded-lg'} ${scrolled ? 'h-14' : 'h-20'}`}
                         />
                     </Link>
 
@@ -117,7 +117,7 @@ export default function Header() {
                 />
                 {/* Panel */}
                 <div
-                    className={`absolute right-0 top-0 h-full w-[280px] bg-white shadow-2xl transition-transform duration-500 ease-out ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+                    className={`absolute right-0 top-0 h-full w-[280px] bg-[#F1E0CF] shadow-2xl transition-transform duration-500 ease-out ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                 >
                     <nav className="flex flex-col pt-24 px-6 space-y-1">

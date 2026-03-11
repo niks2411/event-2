@@ -88,7 +88,7 @@ export default function Pricing() {
                                 className={`reveal rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3
                                     ${pkg.popular
                                         ? 'bg-charcoal text-white shadow-2xl md:scale-105 relative z-10'
-                                        : 'bg-white text-charcoal shadow-xl gold-border card-3d'
+                                        : 'bg-[#F1E0CF] text-charcoal shadow-xl gold-border card-3d'
                                     }`}
                                 style={{ transitionDelay: `${i * 0.15}s` }}
                             >
