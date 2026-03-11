@@ -33,7 +33,7 @@ export default function DestinationPopup() {
                 <div className="flex gap-4">
                     <div className="shrink-0">
                         <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center overflow-hidden">
-                            <img src="/logo-white.png" alt="Shimmer Plano Events" className="w-8 h-8 object-contain" />
+                            <img src="/lrwc-logo.png" alt="LRWC" className="w-8 h-8 object-contain" />
                         </div>
                     </div>
                     <div>

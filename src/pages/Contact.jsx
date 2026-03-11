@@ -2,7 +2,20 @@ import { useState } from 'react';
 import useReveal from '../hooks/useReveal';
 import { Link } from 'react-router-dom';
 
-const eventTypes = ['Wedding', 'Engagement', 'Haldi & Mehndi', 'Sangeet Night', 'Photography', 'Special Effects', 'Corporate Event', 'Private Celebration', 'Other'];
+const eventTypes = [
+    'Venue Suggestion',
+    'Dream Decor next to Heaven',
+    'Creative Wedding Stationary',
+    'Luxe and Hospitality',
+    'Bar Management',
+    'Make-up Artist',
+    'A-Listing Choreography',
+    'Celebrity Engagement & Artist Management',
+    'Catering to Perfection',
+    'Artists for your Mehendi Needs',
+    'Experiential Elements',
+    'Photography & Films'
+];
 
 export default function Contact() {
     const revealRef = useReveal();
@@ -119,7 +132,7 @@ export default function Contact() {
                                         <span className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-sm flex-shrink-0 mt-0.5">📍</span>
                                         <div>
                                             <p className="font-bold text-charcoal mb-0.5 text-base uppercase tracking-wider">Location</p>
-                                            <p className="text-lg">Faridabad, Haryana<br /><span className="text-gold font-semibold">(Serving Delhi-NCR)</span></p>
+                                            <p className="text-lg">Faridabad, Haryana<br /><span className="text-gold font-semibold">(Serving All Over India)</span></p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
@@ -135,7 +148,7 @@ export default function Contact() {
                                         <span className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-sm flex-shrink-0">✉️</span>
                                         <div>
                                             <p className="font-bold text-charcoal mb-0.5 text-base uppercase tracking-wider">Email Us</p>
-                                            <p className="text-lg">info@shimmerplano.com</p>
+                                            <p className="text-lg">info@lrwc.in</p>
                                         </div>
                                     </div>
                                 </div>

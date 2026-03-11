@@ -1,6 +1,7 @@
 import useReveal from '../hooks/useReveal';
 import useCounter from '../hooks/useCounter';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 import { Timeline } from '../components/ui/Timeline';
 
@@ -11,8 +12,8 @@ const timelineData = [
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>The Beginning</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
-                    Shimmer Plano Events was founded with a clear vision: to redefine luxury event planning in Faridabad.
-                    Aakash Narwat started the journey with a passion for excellence and a commitment to perfection.
+                    LRWC was founded with a clear vision: to redefine luxury event planning all over India.
+                    Lalita Raghav started the journey with over 20 years of industry expertise and a passion for excellence.
                 </p>
             </div>
         ),
@@ -38,9 +39,9 @@ const timelineData = [
         title: '2022',
         content: (
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d text-left">
-                <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Delhi-NCR Expansion</h4>
+                <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Expansion Across India</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
-                    We expanded our operations to cover the entire Delhi-NCR region, establishing a strong footprint in Gurgaon and Delhi's premium wedding market.
+                    We expanded our operations to cover the entire country, establishing a strong footprint in premium wedding markets all over India.
                 </p>
             </div>
         ),
@@ -53,12 +54,8 @@ const timelineData = [
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
                     Reaching our 50th event was a proud moment. We became known for our attention to detail and flawless execution.
                 </p>
-                <div className="rounded-2xl overflow-hidden h-48">
-                    <img
-                        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop"
-                        alt="Event Setup"
-                        className="w-full h-full object-cover"
-                    />
+                <div className="rounded-2xl overflow-hidden h-48 bg-gold/5 border border-gold/10 flex items-center justify-center">
+                    <span className="text-gold/20 text-5xl font-bold">100+</span>
                 </div>
             </div>
         ),
@@ -104,13 +101,7 @@ export default function About() {
         <div ref={revealRef}>
             {/* Hero Banner */}
             <section className="hero-page relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0"
-                    style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920&h=800&fit=crop')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                     <OptimizedImage src="/SnapInsta.to_514565952_18564927139058263_1903189261584178576_n_750.jpg" alt="LRWC Story" className="absolute inset-0 w-full h-full" />
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal/70" />
                 <div className="relative z-10 text-center px-4">
                     <div className="ornament-line mb-4 animate-fade-in">
@@ -118,7 +109,7 @@ export default function About() {
                     </div>
                     <p className="text-gold text-sm tracking-[0.4em] uppercase mb-3 animate-fade-in" style={{ fontFamily: 'var(--font-accent)' }}>Our Story</p>
                     <h1 className="text-4xl md:text-6xl font-bold text-white animate-slide-up" style={{ fontFamily: 'var(--font-heading)' }}>
-                        About <span className="gold-text italic">Shimmer Plano Events</span>
+                        About <span className="gold-text italic">LRWC</span>
                     </h1>
                 </div>
             </section>
@@ -134,10 +125,10 @@ export default function About() {
                             </h2>
                             <div className="section-divider-left mb-8" />
                             <p className="text-charcoal-light/65 leading-relaxed mb-4 text-[15px]">
-                                Shimmer Plano Events was founded in 2020 with one simple vision — to create unforgettable celebrations through creativity, discipline, and perfect planning.
+                                LRWC was founded in 2020 with one simple vision — to create unforgettable celebrations through creativity, discipline, and perfect planning.
                             </p>
                             <p className="text-charcoal-light/65 leading-relaxed mb-8 text-[15px]">
-                                In a short span of time, we have successfully planned and executed 100+ events, including weddings, pre-wedding functions, corporate events, and private celebrations across Faridabad and Delhi-NCR.
+                                In a short span of time, we have successfully planned and executed 100+ events, including weddings, pre-wedding functions, corporate events, and private celebrations all over India.
                                 We believe every event is unique, and our team works closely with clients to understand their vision and transform it into reality — beautifully and professionally.
                             </p>
                             <Link to="/services" className="inline-block px-8 py-3.5 bg-gold text-white text-sm font-semibold tracking-widest uppercase rounded-full hover:bg-gold-dark transition-all duration-300 btn-glow">
@@ -145,13 +136,12 @@ export default function About() {
                             </Link>
                         </div>
                         <div className="reveal-right">
-                            <div className="relative">
-                                <img
-                                    src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=700&fit=crop"
-                                    alt="Shimmer Plano Events"
-                                    className="rounded-2xl shadow-2xl w-full object-cover"
-                                    loading="lazy"
-                                />
+                            <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden">
+                                 <OptimizedImage
+                                     src="/SnapInsta.to_471969805_18475535794002324_320309082959194364_n_750.jpg"
+                                     alt="LRWC"
+                                     className="w-full h-full"
+                                 />
                                 <div className="absolute -bottom-6 -left-6 bg-gold text-white p-6 rounded-2xl shadow-xl animate-gentle-pulse">
                                     <p className="text-3xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>100+</p>
                                     <p className="text-sm tracking-wider uppercase">Successful Events</p>
@@ -167,26 +157,46 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="reveal-left order-2 lg:order-1">
-                            <div className="relative">
-                                <img
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop"
-                                    alt="Aakash Narwat"
-                                    className="rounded-2xl shadow-2xl w-full max-w-md mx-auto object-cover aspect-[4/5]"
-                                />
-                                <div className="absolute top-4 right-4 w-24 h-24 border-t-2 border-r-2 border-gold/30 rounded-tr-2xl" />
+                            <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
+                                <div className="w-full h-full bg-charcoal flex items-center justify-center">
+                                    <span className="text-gold/20 text-9xl font-bold">LR</span>
+                                </div>
+                                <div className="absolute top-4 right-4 w-24 h-24 border-t-2 border-r-2 border-gold/30 rounded-tr-2xl z-10" />
                             </div>
                         </div>
                         <div className="reveal-right order-1 lg:order-2">
                             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>The Visionary</p>
-                            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-                                Aakash <span className="gold-text italic">Narwat</span>
-                            </h2>
-                            <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-6">Founder – Shimmer Plano Events</p>
-                            <div className="section-divider-left mb-8" />
-                            <p className="text-charcoal-light/65 leading-relaxed text-[15px]">
-                                Under the leadership of Aakash Narwat, Shimmer Plano Events has grown into a trusted event planning brand known for quality, commitment, and flawless execution.
-                                His dedication to creating stress-free, beautifully managed events has helped Shimmer Plano Events become a trusted name in the industry.
-                            </p>
+                             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
+                                 Lalita <span className="gold-text italic">Raghav</span>
+                             </h2>
+                             <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-6">Founder & Principal Consultant – LRWC</p>
+                             <div className="section-divider-left mb-8" />
+                             <div className="space-y-4 text-charcoal-light/65 leading-relaxed text-[15px]">
+                                 <p>
+                                     Under the leadership of <span className="font-bold text-charcoal">Lalita Raghav</span>, LRWC has grown into a trusted event planning brand known for quality, commitment, and flawless execution.
+                                 </p>
+                                 <ul className="space-y-3 list-none">
+                                     <li className="flex items-center gap-3">
+                                         <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                                         <span>Ex VP @fnpweddingsandevents <span className="text-gold font-bold">{'{20 yrs}'}</span></span>
+                                     </li>
+                                     <li className="flex items-center gap-3">
+                                         <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                                         <span>Professional Wedding Consultant</span>
+                                     </li>
+                                     <li className="flex items-center gap-3">
+                                         <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                                         <span>Cross Culture Wedding Specialist</span>
+                                     </li>
+                                     <li className="flex items-center gap-3">
+                                         <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                                         <span>Expert Consultant for Wedding Venue Setups</span>
+                                     </li>
+                                 </ul>
+                                 <p className="pt-2 italic">
+                                     "My dedication to creating stress-free, beautifully managed events has helped LRWC become a trusted name in the industry."
+                                 </p>
+                             </div>
                         </div>
                     </div>
                 </div>

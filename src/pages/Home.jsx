@@ -4,75 +4,38 @@ import useCounter from '../hooks/useCounter';
 import { Link } from 'react-router-dom';
 import Lightbox from '../components/ui/Lightbox';
 import SmartVideo from '../components/ui/SmartVideo';
+import OptimizedImage from '../components/ui/OptimizedImage';
+import { Skiper30 } from '../components/ui/Skiper30';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const servicesList = [
-    {
-        title: 'Wedding Planning & Decor',
-        badge: 'W',
-        img: '/wedding.webp',
-        desc: 'Complete wedding planning, décor design, and on-ground management.',
-        gallery: [
-            '/wedding/2I0A3871.JPG', '/wedding/2I0A3887.JPG', '/wedding/2I0A3892.JPG', '/wedding/2I0A3894.JPG',
-            '/wedding/IMG_0543.jpg', '/wedding/IMG_0546.jpg', '/wedding/IMG_0549.jpg', '/wedding/IMG_0554.jpg',
-            '/wedding/IMG_0592.jpg', '/wedding/IMG_4443.jpg', '/wedding/IMG_4448.jpg', '/wedding/IMG_4450.jpg',
-            '/wedding/IMG_4453.jpg', '/wedding/IMG_4461.jpg', '/wedding/IMG_4465.jpg', '/wedding/IMG_4477.jpg'
-        ]
-    },
-    {
-        title: 'Haldi & Mehndi Events',
-        badge: 'H',
-        img: '/haldi.webp',
-        desc: 'Vibrant, colorful and joyful décor and planning for Haldi & Mehndi.',
-        gallery: [
-            '/haldi/IMG_0500.jpg', '/haldi/IMG_0502.jpg', '/haldi/IMG_0512.jpg', '/haldi/IMG_4421.jpg',
-            '/haldi/IMG_4422.jpg', '/haldi/IMG_4423.jpg', '/haldi/IMG_4429.jpg', '/haldi/IMG_6756.jpg',
-            '/haldi/IMG_6766.jpg', '/haldi/IMG_6770.jpg', '/haldi/IMG_8477.jpg', '/haldi/IMG_8480.jpg',
-            '/haldi/IMG_8484 (1).jpg', '/haldi/IMG_8488.jpg', '/haldi/IMG_8490.jpg', '/haldi/IMG_8495.jpg',
-            '/haldi/IMG_8500.jpg', '/haldi/IMG_8759.jpg', '/haldi/IMG_8764.jpg', '/haldi/IMG_8791.jpg',
-            '/haldi/IMG_8796.jpg', '/haldi/IMG_8803.jpg', '/haldi/IMG_8808.jpg', '/haldi/IMG_9246.jpg',
-            '/haldi/IMG_9251.jpg', '/haldi/IMG_9257.jpg', '/haldi/IMG_9259.jpg', '/haldi/IMG_9339.jpg',
-            '/haldi/IMG_9346.jpg', '/mehndi/IMG_0430.jpg', '/mehndi/IMG_0438.jpg', '/mehndi/IMG_6723.jpg'
-        ]
-    },
-    { title: 'Sangeet Night', badge: 'S', img: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop', desc: 'High-energy sangeet planning with performances and DJ.' },
-    {
-        title: 'Engagement Ceremony',
-        badge: 'E',
-        img: '/engagement.webp',
-        desc: 'Elegant engagement décor and complete ceremony coordination.',
-        gallery: [
-            '/engagement/IMG_0521 (1).jpg', '/engagement/IMG_0524.jpg', '/engagement/IMG_0526.jpg',
-            '/engagement/IMG_0530.jpg', '/engagement/IMG_0532.jpg'
-        ]
-    },
-    { title: 'Photography & Films', badge: 'P', img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop', desc: 'Professional photography and cinematic wedding films.' },
-    { title: 'SFX & Entry Concepts', badge: 'F', img: '/fire.webp', desc: 'Luxury special effects and grand entry concepts for a magical event.' },
+    { title: 'Venue Suggestion', badge: 'V', img: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg', desc: 'Finding the perfect backdrop for your love story, from royal palaces to serene beaches.' },
+    { title: 'Dream Decor next to Heaven', badge: 'D', img: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg', desc: 'Transforming spaces into ethereal landscapes with celestial decor and floral artistry.' },
+    { title: 'Creative Wedding Stationary', badge: 'S', img: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg', desc: 'Bespoke invitations and event stationery that tell your unique story beautifully.' },
+    { title: 'Luxe and Hospitality', badge: 'L', img: '/a3de815c7a261b7cedab7faa9daad714.jpg', desc: 'Premium guest management and luxury hospitality experiences for a seamless event.' },
+    { title: 'Bar Management', badge: 'B', img: '/28aa63b5324a872840a1b8f1065e21fe.jpg', desc: 'Curated cocktail menus and professional bar services for a spirited celebration.' },
+    { title: 'Make-up Artist', badge: 'M', img: '/b3ccf773fd05d61998269785d2404380.jpg', desc: 'Professional bridal makeup and styling to make you shine on your special day.' },
+    { title: 'A-Listing Choreography', badge: 'C', img: '/Bd.webp', desc: 'Grand Sangeet performances with professional choreography and stage management.' },
+    { title: 'Celebrity Engagement & Artist Management', badge: 'A', img: '/ba2e2214fee77f3228b4c0405e87e42a.jpg', desc: 'Booking top-tier artists and managing celebrity appearances for a star-studded event.' },
+    { title: 'Catering to Perfection', badge: 'F', img: '/8d1ae6c2e50b7eaa8adbb061d6420192.jpg', desc: 'Gourmet dining experiences and world-class catering solutions for your guests.' },
+    { title: 'Artists for your Mehendi Needs', badge: 'H', img: '/747e3166a39f28fdcd00fe2b7fe29b7a.jpg', desc: 'Intricate Mehendi designs by expert artists for a beautiful traditional touch.' },
+    { title: 'Experiential Elements', badge: 'X', img: '/79c2b2bf4b2822b47057a1f8abdb9c72.jpg', desc: 'Unique interactive elements and experiential setups that create a "wow" factor.' },
+    { title: 'Photography & Films', badge: 'P', img: '/SnapInsta.to_469184825_18381580297097874_8533222688974240097_n_750.jpg', desc: 'Capturing timeless moments with world-class photography and cinematic films.' },
 ];
 
 const heroSlides = [
-    '/wedding/2I0A3871.JPG',
-    '/haldi/IMG_8477.jpg',
-    '/engagement/IMG_0521 (1).jpg',
-    '/mehndi/IMG_0438.jpg',
-    '/wedding/IMG_0546.jpg'
+    '/nano-banana-bg.png', // New premium landscape image
+    '/homebg.webp',
+    '/homebg2.webp',
+    '/SnapInsta.to_625047285_18111301408629000_689735211486510512_n_750.jpg'
 ];
 
-const galleryImages = [
-    { src: '/wedding/2I0A3871.JPG', h: 'h-80', label: 'Wedding Planning' },
-    { src: '/haldi/IMG_0512.jpg', h: 'h-64', label: 'Floral Setup' },
-    { src: '/engagement/IMG_0521 (1).jpg', h: 'h-72', label: 'Engagement' },
-    { src: '/fire.webp', h: 'h-80', label: 'Special Effects' },
-    { src: '/wedding/IMG_0546.jpg', h: 'h-64', label: 'Palace Wedding' },
-    { src: '/haldi/IMG_8477.jpg', h: 'h-72', label: 'Haldi Ceremony' },
-    { src: '/wedding/IMG_4450.jpg', h: 'h-80', label: 'Bridal Entry' },
-    { src: '/haldi/IMG_9251.jpg', h: 'h-64', label: 'Stage Decor' },
-];
+// galleryImages removed - now handled in Skiper30 component
 
 const testimonials = [
-    { name: 'Priya & Rahul', role: 'Wedding', text: 'They turned our dream wedding into a reality beyond anything we imagined. Every detail was perfect.', rating: 5, img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop' },
-    { name: 'Ananya Sharma', role: 'Engagement', text: 'The most magical engagement ceremony! Our families were left speechless by the stunning décor.', rating: 5, img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop' },
-    { name: 'Vikram Enterprises', role: 'Corporate Event', text: 'Professional, creative, and flawless execution. Our annual gala was the talk of the industry.', rating: 5, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' },
+    { name: 'Priya & Rahul Sharma', role: 'Wedding — Mumbai', rating: 5, text: 'LRWC made our wedding absolutely magical. Every detail was perfect, from the floral arrangements to the fireworks finale. Our guests are still talking about it!' },
+    { name: 'Ananya & Vikrant Patel', role: 'Engagement — Delhi', rating: 5, text: 'The most romantic engagement ceremony we could have imagined. The team captured our story beautifully and created an atmosphere that was pure magic.' },
+    { name: 'Vikram Enterprises', role: 'Corporate Gala — Bangalore', rating: 5, text: 'Professional, creative, and absolutely flawless execution. Our annual gala was transformed into a world-class event that elevated our brand image.' },
 ];
 
 const whyUs = [
@@ -94,10 +57,9 @@ const workingProcess = [
 ];
 
 const reels = [
-    { id: 'aUrasM-b3sg', label: 'Grand Wedding Highlight', poster: '/wedding.webp' },
-    { id: 'rmU6a81ll3Q', label: 'Haldi Celebration', poster: '/haldi.webp' },
-    { id: 'S9THv_CjII4', label: 'Mehndi Magic', poster: '/haldi.webp' },
-    { id: 'dALJnPgxfC8', label: 'Reception Night', poster: '/wedding.webp' },
+    { src: '/SnapInsta.to_AQM6VnEsQ6clqRYP_qzysG-ENkXB_krSW9Ejn0b5WedrVjORk3BJqA0ukD1n0txwzGaFRIExEZxIyratigGhmu60rdnoZW8RmMKyNww.mp4', label: 'Grand Celebration', poster: '/venue-suggestion.png' },
+    { src: '/SnapInsta.to_AQNbH72OQNrL2bbZOfLaEjoMa53v05GZtYoFxEnfUKLUWWXiNlrSnIAgjoXAgQjAcUDM32gWvq5m9umKLOuwYKhRbht2GsGySijNceM.mp4', label: 'Wedding Magic', poster: '/dream-decor.png' },
+    { src: '/SnapInsta.to_AQOOgJma500Ss5aPYz-Pk-VShloEXDErUz9M0BCyjE2dQq28ltaa03EZeV1gPRim812DM8Z72X42gSqGYi2cnW4W.mp4', label: 'Reception Night', poster: '/photography-new.png' },
 ];
 
 export default function Home() {
@@ -114,7 +76,7 @@ export default function Home() {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-        }, 5000);
+        }, 8000);
         return () => clearInterval(timer);
     }, []);
 
@@ -159,11 +121,13 @@ export default function Home() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            transition={{ 
+                                opacity: { duration: 1.5, ease: "easeInOut" }
+                            }}
                             className="absolute inset-0"
                             style={{
                                 backgroundImage: `url('${heroSlides[currentSlide]}')`,
-                                backgroundSize: 'cover',
+                                backgroundSize: '100% 100%',
                                 backgroundPosition: 'center',
                             }}
                         />
@@ -179,7 +143,7 @@ export default function Home() {
                     <div className="mb-4 animate-fade-in flex items-center justify-center gap-3" style={{ animationDelay: '0.2s' }}>
                         <span className="text-gold text-xl">✦</span>
                         <p className="text-white/90 text-sm md:text-base tracking-[0.3em] uppercase font-bold" style={{ fontFamily: 'var(--font-accent)' }}>
-                            Shimmer Plano Events
+                            LRWC
                         </p>
                         <span className="text-gold text-xl">✦</span>
                     </div>
@@ -190,7 +154,7 @@ export default function Home() {
                     </h1>
 
                     <p className="text-white/80 text-sm md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in leading-relaxed drop-shadow-md" style={{ animationDelay: '0.7s' }}>
-                        Premium wedding & event planning company in Faridabad & Delhi-NCR.
+                        Premium wedding & event planning company serving all over India.
                         From intimate ceremonies to grand weddings — we plan, design and execute everything with perfection.
                     </p>
 
@@ -250,18 +214,17 @@ export default function Home() {
                                 style={{ transitionDelay: `${i * 0.08}s` }}
                                 onClick={() => s.gallery && openGallery(s)}
                             >
-                                <div className="img-zoom h-52 relative">
-                                    <img src={s.img} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
+                                <div className="img-zoom h-72 relative text-xl">
+                                    <OptimizedImage src={s.img} alt={s.title} className="w-full h-full" />
                                     <div className="img-overlay flex items-center justify-center">
                                         <span className="text-white text-[10px] font-bold tracking-widest uppercase px-4 py-2 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full">
                                             {s.gallery ? 'View Gallery →' : 'Explore →'}
                                         </span>
                                     </div>
-                                    <span className="absolute top-4 left-4 icon-badge icon-badge-circle text-sm">{s.badge}</span>
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{s.title}</h3>
-                                    <p className="text-charcoal-light/55 text-sm leading-relaxed mb-4">{s.desc}</p>
+                                <div className="p-5">
+                                    <h3 className="text-lg font-bold text-charcoal mb-1" style={{ fontFamily: 'var(--font-heading)' }}>{s.title}</h3>
+                                    <p className="text-charcoal-light/55 text-[13px] leading-snug mb-3 line-clamp-2">{s.desc}</p>
                                     <div className="flex justify-between items-center">
                                         <Link to="/services" onClick={(e) => e.stopPropagation()} className="text-gold text-[10px] font-bold tracking-widest uppercase hover:text-gold-dark transition-colors">
                                             Learn More →
@@ -272,9 +235,7 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
-            </section>
-
-            {/* ═══════════ MASONRY GALLERY ═══════════ */}
+            </section>            {/* ═══════════ MASONRY GALLERY ═══════════ */}
             <section className="py-28 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16 reveal">
@@ -284,20 +245,8 @@ export default function Home() {
                         </h2>
                         <div className="section-divider" />
                     </div>
-                    <div className="masonry-grid">
-                        {galleryImages.map((item, i) => (
-                            <div
-                                key={i}
-                                className={`reveal img-zoom rounded-2xl overflow-hidden shadow-md hover:shadow-2xl group cursor-pointer relative ${item.h} transition-all duration-500`}
-                                onClick={() => openGallery({ title: item.label, gallery: [item.src] })}
-                            >
-                                <img src={item.src} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
-                                <div className="img-overlay">
-                                    <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-heading)' }}>{item.label}</span>
-                                    <span className="text-gold text-xs tracking-wider uppercase mt-2">View Photo</span>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
+                        <Skiper30 />
                     </div>
                     <div className="text-center mt-12 reveal">
                         <Link to="/portfolio" className="inline-block px-10 py-4 border-2 border-gold text-gold font-bold text-xs tracking-widest uppercase rounded-full hover:bg-gold hover:text-white transition-all duration-300">
@@ -318,11 +267,11 @@ export default function Home() {
                         </h2>
                         <div className="section-divider" />
                         <p className="text-white/40 max-w-xl mx-auto text-sm mt-6">
-                            Glimpses of the magic we create. Experience the emotions, the grandeur, and the joy of Shimmer Plano Events.
+                            Glimpses of the magic we create. Experience the emotions, the grandeur, and the joy of LRWC.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {reels.map((reel, i) => (
                             <div
                                 key={reel.id}
@@ -331,6 +280,7 @@ export default function Home() {
                             >
                                 <SmartVideo
                                     id={reel.id}
+                                    src={reel.src}
                                     poster={reel.poster}
                                     label={reel.label}
                                 />
@@ -339,47 +289,73 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
             {/* ═══════════ WHY CHOOSE US ═══════════ */}
-            <section className="py-28 bg-blush relative overflow-hidden">
-                <div className="gradient-orb gradient-orb-gold w-96 h-96 top-0 right-0 animate-orb-float" />
+            <section className="py-28 bg-cream relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-20 reveal">
-                        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>Why Choose Us</p>
-                        <h2 className="text-3xl md:text-5xl font-bold text-charcoal mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
-                            The <span className="gold-text italic">Shimmer</span> Advantage
-                        </h2>
-                        <div className="section-divider" />
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {whyUs.map((item, i) => (
-                            <div
-                                key={item.title}
-                                className="reveal text-center p-8 bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm
-                                    hover:shadow-xl transition-all duration-500 hover:-translate-y-3 group gold-border"
-                                style={{ transitionDelay: `${i * 0.1}s` }}
-                            >
-                                <div className="icon-badge icon-badge-lg icon-badge-circle mx-auto mb-5 text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
-                                    {item.num}
+                    <div className="flex flex-col lg:flex-row gap-16 items-center">
+                        {/* Image Side */}
+                        <div className="reveal-left lg:w-5/12">
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[450px] md:h-[550px]">
+                                <OptimizedImage 
+                                    src="/homebg2.webp" 
+                                    alt="Destination Wedding" 
+                                    className="w-full h-full object-cover"
+                                    containerClassName="h-full"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                                <div className="absolute bottom-8 left-8 right-8">
+                                    <div className="p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+                                        <p className="text-white text-[10px] tracking-[0.3em] uppercase mb-1 opacity-70">Your Story</p>
+                                        <p className="text-gold text-xl md:text-2xl font-bold italic" style={{ fontFamily: 'var(--font-heading)' }}>Experience Perfection</p>
+                                    </div>
                                 </div>
-                                <h3 className="text-lg font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{item.title}</h3>
-                                <p className="text-charcoal-light/55 text-sm leading-relaxed">{item.desc}</p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
 
-                    <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                        <div ref={ref1} className="reveal p-8 bg-white/50 rounded-2xl">
-                            <p className="text-5xl font-bold gold-text mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{count1}+</p>
-                            <p className="text-charcoal-light/50 text-xs uppercase tracking-[0.2em]">Events Delivered</p>
-                        </div>
-                        <div ref={ref2} className="reveal p-8 bg-white/50 rounded-2xl">
-                            <p className="text-5xl font-bold gold-text mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{count2}+</p>
-                            <p className="text-charcoal-light/50 text-xs uppercase tracking-[0.2em]">Years of Excellence</p>
-                        </div>
-                        <div ref={ref3} className="reveal p-8 bg-white/50 rounded-2xl">
-                            <p className="text-5xl font-bold gold-text mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{count3}%</p>
-                            <p className="text-charcoal-light/50 text-xs uppercase tracking-[0.2em]">Client Satisfaction</p>
+                        {/* Content Side */}
+                        <div className="lg:w-7/12" ref={ref3}>
+                            <div className="mb-12 reveal-right">
+                                <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>The LRWC Advantage</p>
+                                <h2 className="text-3xl md:text-5xl font-bold text-charcoal mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+                                    Why Choose <span className="gold-text italic">Us</span>
+                                </h2>
+                                <div className="section-divider-left mb-8" />
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                                {whyUs.map((item, i) => (
+                                    <div 
+                                        key={item.title} 
+                                        className="reveal flex gap-4 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gold/10 group"
+                                        style={{ transitionDelay: `${i * 0.1}s` }}
+                                    >
+                                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-base font-bold text-charcoal mb-1" style={{ fontFamily: 'var(--font-heading)' }}>{item.title}</h3>
+                                            <p className="text-charcoal-light/60 text-[13px] leading-snug">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            
+                            <div className="mt-12 flex flex-wrap gap-8 pt-8 border-t border-gold/10">
+                                <div ref={ref1} className="reveal">
+                                    <p className="text-3xl font-bold gold-text" style={{ fontFamily: 'var(--font-heading)' }}>{count1}+</p>
+                                    <p className="text-[10px] text-charcoal/40 uppercase tracking-widest">Events Delivered</p>
+                                </div>
+                                <div ref={ref2} className="reveal">
+                                    <p className="text-3xl font-bold gold-text" style={{ fontFamily: 'var(--font-heading)' }}>{count2}+</p>
+                                    <p className="text-[10px] text-charcoal/40 uppercase tracking-widest">Years of Excellence</p>
+                                </div>
+                                <div className="reveal bg-charcoal text-white px-5 py-2.5 rounded-xl border border-gold/20 flex items-center gap-3">
+                                    <p className="text-2xl font-bold gold-text leading-none">{count3}%</p>
+                                    <p className="text-[9px] uppercase tracking-[0.1em] opacity-40 leading-tight">Client<br/>Satisfaction</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -434,7 +410,9 @@ export default function Home() {
                                     <div className="stars text-base mb-4">{'★'.repeat(t.rating)}</div>
                                     <p className="text-charcoal-light/65 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
                                     <div className="flex items-center gap-3">
-                                        <img src={t.img} alt={t.name} className="w-11 h-11 rounded-full object-cover ring-2 ring-gold/20" loading="lazy" />
+                                        <div className="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center text-gold font-bold text-sm ring-2 ring-gold/20">
+                                            {t.name.charAt(0)}
+                                        </div>
                                         <div>
                                             <p className="font-bold text-charcoal text-sm">{t.name}</p>
                                             <p className="text-gold text-xs tracking-wider uppercase">{t.role}</p>
@@ -463,13 +441,10 @@ export default function Home() {
 
             {/* ═══════════ CTA BANNER ═══════════ */}
             <section className="py-28 relative overflow-hidden">
-                <div className="absolute inset-0"
-                    style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1920&h=600&fit=crop')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundAttachment: 'fixed',
-                    }}
+                <OptimizedImage
+                    src="/homebg.webp"
+                    alt="Plan your event"
+                    className="absolute inset-0 w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 to-charcoal/75" />
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">

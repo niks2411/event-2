@@ -41,13 +41,13 @@ export default function Header() {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-24">
+                <div className={`flex items-center justify-between transition-all duration-500 ${scrolled ? 'h-24' : 'h-32'}`}>
                     {/* Logo */}
                     <Link to="/" className="flex items-center group">
                         <img
-                            src={isDark ? '/logo-white.png' : '/logo-black.png'}
-                            alt="Shimmer Plano Events"
-                            className="h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                            src={isDark ? "/logo-white.png" : "/logo-black.png"}
+                            alt="LRWC"
+                            className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${scrolled ? 'h-20' : 'h-28'}`}
                         />
                     </Link>
 

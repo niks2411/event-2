@@ -1,30 +1,23 @@
 import { useState } from 'react';
 import useReveal from '../hooks/useReveal';
 import SmartVideo from '../components/ui/SmartVideo';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 const categories = ['All', 'Weddings', 'Engagement', 'Haldi', 'Cinematic Reels', 'Fireworks'];
 
 const portfolioItems = [
-    { src: '/wedding/2I0A3871.JPG', cat: 'Weddings', title: 'Grand Entry Moment', h: 'h-80', poster: '/wedding.webp' },
-    { id: 'aUrasM-b3sg', cat: 'Cinematic Reels', title: 'Wedding Highlight', h: 'h-[400px]', isVideo: true, poster: '/wedding.webp' },
-    { src: '/wedding/2I0A3887.JPG', cat: 'Weddings', title: 'Mandap Decor', h: 'h-64', poster: '/wedding.webp' },
-    { id: 'rmU6a81ll3Q', cat: 'Cinematic Reels', title: 'Haldi Celebration', h: 'h-[400px]', isVideo: true, poster: '/haldi.webp' },
-    { src: '/haldi/IMG_0500.jpg', cat: 'Haldi', title: 'Traditional Haldi Setup', h: 'h-72', poster: '/haldi.webp' },
-    { src: '/engagement/IMG_0521 (1).jpg', cat: 'Engagement', title: 'Royal Engagement', h: 'h-64', poster: '/engagement.webp' },
-    { id: 'S9THv_CjII4', cat: 'Cinematic Reels', title: 'Mehndi & Decor', h: 'h-[400px]', isVideo: true, poster: '/haldi.webp' },
-    { src: '/mehndi/IMG_0430.jpg', cat: 'Haldi', title: 'Mehndi Art & Decor', h: 'h-80', poster: '/haldi.webp' },
-    { src: '/wedding/IMG_0543.jpg', cat: 'Weddings', title: 'Floral Elegance', h: 'h-72', poster: '/wedding.webp' },
-    { id: 'dALJnPgxfC8', cat: 'Cinematic Reels', title: 'Reception Highlights', h: 'h-[400px]', isVideo: true, poster: '/wedding.webp' },
-    { src: '/haldi/IMG_4421.jpg', cat: 'Haldi', title: 'Yellow Vibe Celebration', h: 'h-64', poster: '/haldi.webp' },
-    { src: '/engagement/IMG_0530.jpg', cat: 'Engagement', title: 'Ring Ceremony', h: 'h-80', poster: '/engagement.webp' },
-    { src: '/fire.webp', cat: 'Fireworks', title: 'Grand Finale Show', h: 'h-72', poster: '/fire.webp' },
-    { src: '/wedding/IMG_0554.jpg', cat: 'Weddings', title: 'Dinner Reception', h: 'h-64', poster: '/wedding.webp' },
-    { src: '/haldi/IMG_8484 (1).jpg', cat: 'Haldi', title: 'Vibrant Haldi Smiles', h: 'h-80', poster: '/haldi.webp' },
-    { src: '/mehndi/IMG_6723.jpg', cat: 'Haldi', title: 'Henna Traditions', h: 'h-72', poster: '/haldi.webp' },
-    { src: '/wedding/IMG_4477.jpg', cat: 'Weddings', title: 'Luxury Stay', h: 'h-64', poster: '/wedding.webp' },
-    { src: '/engagement/IMG_0532.jpg', cat: 'Engagement', title: 'Cake Cutting', h: 'h-80', poster: '/engagement.webp' },
-    { src: '/haldi/IMG_9346.jpg', cat: 'Haldi', title: 'Full Bloom Decor', h: 'h-72', poster: '/haldi.webp' },
-    { src: '/wedding/IMG_4443.jpg', cat: 'Weddings', title: 'Evening Vibe', h: 'h-64', poster: '/wedding.webp' },
+    { src: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg', cat: 'Weddings', title: 'Regal Wedding Decor', h: 'h-80' },
+    { src: '/SnapInsta.to_AQM6VnEsQ6clqRYP_qzysG-ENkXB_krSW9Ejn0b5WedrVjORk3BJqA0ukD1n0txwzGaFRIExEZxIyratigGhmu60rdnoZW8RmMKyNww.mp4', cat: 'Cinematic Reels', title: 'Grand Celebration Highlight', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg' },
+    { src: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg', cat: 'Engagement', title: 'Romantic Setup', h: 'h-64' },
+    { src: '/SnapInsta.to_AQNbH72OQNrL2bbZOfLaEjoMa53v05GZtYoFxEnfUKLUWWXiNlrSnIAgjoXAgQjAcUDM32gWvq5m9umKLOuwYKhRbht2GsGySijNceM.mp4', cat: 'Cinematic Reels', title: 'Wedding Magic', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg' },
+    { src: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg', cat: 'Weddings', title: 'Luxury Mantle', h: 'h-72' },
+    { src: '/SnapInsta.to_AQOOgJma500Ss5aPYz-Pk-VShloEXDErUz9M0BCyjE2dQq28ltaa03EZeV1gPRim812DM8Z72X42gSqGYi2cnW4W.mp4', cat: 'Cinematic Reels', title: 'Reception Highlights', h: 'h-[400px]', isVideo: true, poster: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg' },
+    { src: '/SnapInsta.to_469184825_18381580297097874_8533222688974240097_n_750.jpg', cat: 'Weddings', title: 'Evening Vibe', h: 'h-64' },
+    { src: '/SnapInsta.to_471711385_18475536073002324_6102271118363019889_n_750.jpg', cat: 'Haldi', title: 'Vibrant Haldi Decor', h: 'h-80' },
+    { src: '/SnapInsta.to_471969805_18475535794002324_320309082959194364_n_750.jpg', cat: 'Weddings', title: 'Grand Entry', h: 'h-72' },
+    { src: '/SnapInsta.to_514565952_18564927139058263_1903189261584178576_n_750.jpg', cat: 'Weddings', title: 'Elegant Frame', h: 'h-64' },
+    { src: '/SnapInsta.to_582015082_18541259023021250_1273442079057468699_n_750.jpg', cat: 'Haldi', title: 'Bloom Ceremony', h: 'h-72' },
+    { src: '/SnapInsta.to_625047285_18111301408629000_689735211486510512_n_750.jpg', cat: 'Weddings', title: 'Traditional Detail', h: 'h-80' },
 ];
 
 export default function Portfolio() {
@@ -90,25 +83,21 @@ export default function Portfolio() {
                                 {item.isVideo ? (
                                     <SmartVideo
                                         id={item.id}
+                                        src={item.src}
                                         poster={item.poster}
                                         label={item.title}
                                     />
                                 ) : (
-                                    <img
+                                    <OptimizedImage
                                         src={item.src}
                                         alt={item.title}
-                                        className="w-full h-full object-cover"
-                                        loading="lazy"
+                                        className="w-full h-full"
+                                        containerClassName="h-full"
                                     />
                                 )}
                                 <div className="img-overlay">
                                     <span className="text-gold text-xs tracking-wider uppercase mb-1">{item.cat}</span>
                                     <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-heading)' }}>{item.title}</span>
-                                    {item.isVideo && (
-                                        <span className="px-3 py-1 bg-gold text-white text-[8px] font-bold tracking-widest uppercase rounded-full mt-2">
-                                            YouTube Reel
-                                        </span>
-                                    )}
                                 </div>
                             </div>
                         ))}
@@ -129,17 +118,27 @@ export default function Portfolio() {
                     <div className="max-w-4xl w-full p-4 flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
                         {lightbox.isVideo ? (
                             <div className="w-full aspect-[9/16] max-h-[85vh] rounded-xl overflow-hidden shadow-2xl border-4 border-white/5 bg-black">
-                                <iframe
-                                    src={`https://www.youtube.com/embed/${lightbox.id}?autoplay=1&controls=1&rel=0`}
-                                    className="w-full h-full"
-                                    title={lightbox.title}
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
+                                {lightbox.id ? (
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${lightbox.id}?autoplay=1&controls=1&rel=0`}
+                                        className="w-full h-full"
+                                        title={lightbox.title}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    />
+                                ) : (
+                                    <video
+                                        src={lightbox.src}
+                                        className="w-full h-full object-cover"
+                                        autoPlay
+                                        controls
+                                        playsInline
+                                    />
+                                )}
                             </div>
                         ) : (
-                            <img src={lightbox.src} alt={lightbox.title} className="max-h-[75vh] w-auto rounded-xl shadow-2xl" />
+                            <OptimizedImage src={lightbox.src} alt={lightbox.title} className="max-h-[75vh] w-auto rounded-xl shadow-2xl" priority />
                         )}
                         <div className="text-center mt-6">
                             <h4 className="text-white text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>{lightbox.title}</h4>

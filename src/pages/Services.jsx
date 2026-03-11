@@ -3,14 +3,22 @@ import useReveal from '../hooks/useReveal';
 import { Link } from 'react-router-dom';
 import Lightbox from '../components/ui/Lightbox';
 import { AnimatePresence } from 'framer-motion';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 const services = [
-    {
-        title: 'Wedding Planning & Decor',
-        badge: 'W',
-        img: '/wedding.webp',
-        desc: 'Complete wedding planning, décor design, theme styling and on-ground management.',
-        includes: ['Mandap & stage decor', 'Bride & groom entry concepts', 'Floral & lighting setup', 'Guest seating & ambience'],
+    { 
+        title: 'Venue Suggestion', 
+        badge: 'V', 
+        img: '/SnapInsta.to_368252794_18295230007186235_579421688051440182_n_750.jpg', 
+        desc: 'Finding the perfect backdrop for your love story, from royal palaces to serene beaches.',
+        includes: ['Palace Weddings', 'Beach Resorts', 'Boutique Venues', 'Destination Planning']
+    },
+    { 
+        title: 'Dream Decor next to Heaven', 
+        badge: 'D', 
+        img: '/SnapInsta.to_378181396_18298849789186235_4370895842433673534_n_750.jpg', 
+        desc: 'Transforming spaces into ethereal landscapes with celestial decor and floral artistry.',
+        includes: ['Theme Styling', 'Floral Artistry', 'Lighting Design', 'Mandap Decor'],
         gallery: [
             '/wedding/2I0A3871.JPG', '/wedding/2I0A3887.JPG', '/wedding/2I0A3892.JPG', '/wedding/2I0A3894.JPG',
             '/wedding/IMG_0543.jpg', '/wedding/IMG_0546.jpg', '/wedding/IMG_0549.jpg', '/wedding/IMG_0554.jpg',
@@ -18,12 +26,61 @@ const services = [
             '/wedding/IMG_4453.jpg', '/wedding/IMG_4461.jpg', '/wedding/IMG_4465.jpg', '/wedding/IMG_4477.jpg'
         ]
     },
-    {
-        title: 'Haldi & Mehndi Events',
-        badge: 'H',
-        img: '/haldi.webp',
-        desc: 'Vibrant, colorful and joyful décor and planning for Haldi & Mehndi functions.',
-        includes: ['Theme décor & floral setup', 'Entry coordination', 'Music & vibe planning', 'Guest flow management'],
+    { 
+        title: 'Creative Wedding Stationary', 
+        badge: 'S', 
+        img: '/SnapInsta.to_469014936_18381580087097874_4466348175444016484_n.jpg', 
+        desc: 'Bespoke invitations and event stationery that tell your unique story beautifully.',
+        includes: ['Custom Invites', 'Digital E-vites', 'Itinerary Cards', 'Thank You Notes']
+    },
+    { 
+        title: 'Luxe and Hospitality', 
+        badge: 'L', 
+        img: '/a3de815c7a261b7cedab7faa9daad714.jpg', 
+        desc: 'Premium guest management and luxury hospitality experiences for a seamless event.',
+        includes: ['RSVP Handling', 'Guest Check-in', 'Luggage Management', 'Family Handling']
+    },
+    { 
+        title: 'Bar Management', 
+        badge: 'B', 
+        img: '/28aa63b5324a872840a1b8f1065e21fe.jpg', 
+        desc: 'Curated cocktail menus and professional bar services for a spirited celebration.',
+        includes: ['Molecular Mixology', 'Professional Flair Bartending', 'Themed Bar Setup', 'Premium Ingredients']
+    },
+    { 
+        title: 'Make-up Artist', 
+        badge: 'M', 
+        img: '/b3ccf773fd05d61998269785d2404380.jpg', 
+        desc: 'Professional bridal makeup and styling to make you shine on your special day.',
+        includes: ['Bridal Makeup', 'Guest Makeup', 'Hair Design', 'Sari Draping']
+    },
+    { 
+        title: 'A-Listing Choreography', 
+        badge: 'C', 
+        img: '/Bd.webp', 
+        desc: 'Grand Sangeet performances with professional choreography and stage management.',
+        includes: ['Sangeet Choreography', 'Backup Dancers', 'Concept Shoots', 'Stage Presence Coaching']
+    },
+    { 
+        title: 'Celebrity Engagement & Artist Management', 
+        badge: 'A', 
+        img: '/ba2e2214fee77f3228b4c0405e87e42a.jpg', 
+        desc: 'Booking top-tier artists and managing celebrity appearances for a star-studded event.',
+        includes: ['Singer Booking', 'Celebrity Appearance', 'Live Bands', 'Stage Performers']
+    },
+    { 
+        title: 'Catering to Perfection', 
+        badge: 'F', 
+        img: '/8d1ae6c2e50b7eaa8adbb061d6420192.jpg', 
+        desc: 'Gourmet dining experiences and world-class catering solutions for your guests.',
+        includes: ['Multi-cuisine Menu', 'Live Counters', 'Gourmet Plating', 'Premium Service']
+    },
+    { 
+        title: 'Artists for your Mehendi Needs', 
+        badge: 'H', 
+        img: '/747e3166a39f28fdcd00fe2b7fe29b7a.jpg', 
+        desc: 'Intricate Mehendi designs by expert artists for a beautiful traditional touch.',
+        includes: ['Bridal Mehendi', 'Group Mehendi', 'Organic Henna', 'Modern & Traditional Designs'],
         gallery: [
             '/haldi/IMG_0500.jpg', '/haldi/IMG_0502.jpg', '/haldi/IMG_0512.jpg', '/haldi/IMG_4421.jpg',
             '/haldi/IMG_4422.jpg', '/haldi/IMG_4423.jpg', '/haldi/IMG_4429.jpg', '/haldi/IMG_6756.jpg',
@@ -35,51 +92,19 @@ const services = [
             '/haldi/IMG_9346.jpg', '/mehndi/IMG_0430.jpg', '/mehndi/IMG_0438.jpg', '/mehndi/IMG_6723.jpg'
         ]
     },
-    {
-        title: 'Sangeet Night',
-        badge: 'S',
-        img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&h=500&fit=crop',
-        desc: 'High-energy sangeet planning with performances, DJ, and show flow management.',
-        includes: ['DJ & sound setup', 'Anchor coordination', 'Dance performance flow', 'Stage & lighting management']
+    { 
+        title: 'Experiential Elements', 
+        badge: 'X', 
+        img: '/79c2b2bf4b2822b47057a1f8abdb9c72.jpg', 
+        desc: 'Unique interactive elements and experiential setups that create a "wow" factor.',
+        includes: ['Photo Booths', 'Interactive Games', 'Surprise Elements', 'Curated Experiences']
     },
-    {
-        title: 'Engagement Ceremony',
-        badge: 'E',
-        img: '/engagement.webp',
-        desc: 'Elegant engagement décor and complete ceremony coordination.',
-        includes: ['Couple entry planning', 'Stage flow management', 'Floral décor', 'Photography coordination'],
-        gallery: [
-            '/engagement/IMG_0521 (1).jpg', '/engagement/IMG_0524.jpg', '/engagement/IMG_0526.jpg',
-            '/engagement/IMG_0530.jpg', '/engagement/IMG_0532.jpg'
-        ]
-    },
-    {
-        title: 'Photography & Videography',
-        badge: 'P',
-        img: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=700&h=500&fit=crop',
-        desc: 'Professional wedding photography and cinematic films.',
-        includes: ['Candid photography', 'Traditional coverage', 'Highlight films', 'Full event documentation']
-    },
-    {
-        title: 'DJ, Music & Entertainment',
-        badge: 'M',
-        img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=700&h=500&fit=crop',
-        desc: 'Complete entertainment solutions for weddings and events.',
-        includes: ['DJ setup', 'Sound systems', 'Anchor & artist coordination', 'Music flow planning']
-    },
-    {
-        title: 'SFX – Special Effects',
-        badge: 'F',
-        img: '/fire.webp',
-        desc: 'Luxury effects to make your event magical.',
-        includes: ['Cold fireworks', 'Indoor fireworks', 'Sparkle machines', 'Special entry effects', 'Grand moment highlights']
-    },
-    {
-        title: 'Hospitality & Guest Management',
-        badge: 'G',
-        img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=700&h=400&fit=crop',
-        desc: 'Professional guest handling and hospitality services.',
-        includes: ['Guest welcome & coordination', 'Seating management', 'Family handling', 'Smooth event flow']
+    { 
+        title: 'Photography & Films', 
+        badge: 'P', 
+        img: '/SnapInsta.to_469184825_18381580297097874_8533222688974240097_n_750.jpg', 
+        desc: 'Capturing timeless moments with world-class photography and cinematic films.',
+        includes: ['Pre-wedding Shoots', 'Cinematic Films', 'Candid Photography', 'Designer Albums']
     },
 ];
 
@@ -121,19 +146,20 @@ export default function Services() {
         <div ref={revealRef}>
             {/* Hero */}
             <section className="hero-page relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0"
-                    style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=800&fit=crop')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                <div className="absolute inset-0">
+                    <OptimizedImage
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=800&fit=crop"
+                        alt="Services Hero"
+                        className="w-full h-full"
+                        priority
+                    />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal/70" />
                 <div className="relative z-10 text-center px-4">
                     <div className="ornament-line mb-4 animate-fade-in">
                         <span className="ornament" />
                     </div>
-                    <p className="text-gold text-sm tracking-[0.4em] uppercase mb-3 animate-fade-in" style={{ fontFamily: 'var(--font-accent)' }}>What We Offer</p>
+                    <p className="text-gold text-sm tracking-[0.4em] uppercase mb-3 animate-fade-in" style={{ fontFamily: 'var(--font-accent)' }}>What We Offer — Serving all over India</p>
                     <h1 className="text-4xl md:text-6xl font-bold text-white animate-slide-up" style={{ fontFamily: 'var(--font-heading)' }}>
                         Our <span className="gold-text italic">Services</span>
                     </h1>
@@ -162,9 +188,9 @@ export default function Services() {
                                 style={{ transitionDelay: `${i * 0.05}s` }}
                                 onClick={() => s.gallery && openGallery(s)}
                             >
-                                <div className="h-64 relative overflow-hidden group">
-                                    <img src={s.img} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                <div className="h-[420px] relative overflow-hidden group">
+                                    <OptimizedImage src={s.img} alt={s.title} className="w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
                                         {s.gallery && (
                                             <span className="px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-widest uppercase rounded-full">
                                                 View Gallery
@@ -175,11 +201,11 @@ export default function Services() {
                                         {s.badge}
                                     </span>
                                 </div>
-                                <div className="p-8 flex-1 flex flex-col">
-                                    <h3 className="text-2xl font-bold text-charcoal mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+                                <div className="p-6 flex-1 flex flex-col">
+                                    <h3 className="text-xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
                                         {s.title}
                                     </h3>
-                                    <p className="text-charcoal-light/60 text-sm leading-relaxed mb-6">
+                                    <p className="text-charcoal-light/60 text-xs leading-relaxed mb-5">
                                         {s.desc}
                                     </p>
                                     <div className="space-y-4 flex-1">
@@ -195,11 +221,11 @@ export default function Services() {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="mt-8 flex gap-4">
+                                    <div className="mt-6 flex gap-3">
                                         {s.gallery ? (
                                             <button
                                                 onClick={(e) => { e.stopPropagation(); openGallery(s); }}
-                                                className="flex-1 px-8 py-3 bg-charcoal text-white text-[10px] font-bold tracking-widest uppercase rounded-full hover:bg-black transition-all duration-300"
+                                                className="flex-1 px-6 py-2.5 bg-charcoal text-white text-[9px] font-bold tracking-widest uppercase rounded-full hover:bg-black transition-all duration-300"
                                             >
                                                 View Gallery
                                             </button>
@@ -207,7 +233,7 @@ export default function Services() {
                                         <Link
                                             to="/contact"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="flex-1 px-8 py-3 bg-gold text-white text-[10px] font-bold tracking-widest uppercase rounded-full hover:bg-gold-dark transition-all duration-300 text-center"
+                                            className="flex-1 px-6 py-2.5 bg-gold text-white text-[9px] font-bold tracking-widest uppercase rounded-full hover:bg-gold-dark transition-all duration-300 text-center"
                                         >
                                             Enquire Now
                                         </Link>

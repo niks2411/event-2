@@ -12,14 +12,18 @@ const quickLinks = [
 ];
 
 const services = [
-    'Wedding Planning & Decor',
-    'Haldi & Mehndi Events',
-    'Sangeet Night',
-    'Engagement Ceremony',
-    'Photography & Videography',
-    'DJ, Music & Entertainment',
-    'SFX – Special Effects',
-    'Hospitality & Guest Management',
+    'Venue Suggestion',
+    'Dream Decor next to Heaven',
+    'Creative Wedding Stationary',
+    'Luxe and Hospitality',
+    'Bar Management',
+    'Make-up Artist',
+    'A-Listing Choreography',
+    'Celebrity Engagement & Artist Management',
+    'Catering to Perfection',
+    'Artists for your Mehendi Needs',
+    'Experiential Elements',
+    'Photography & Films',
 ];
 
 const socialLinks = [
@@ -94,12 +98,12 @@ export default function Footer() {
 
             {/* Main Footer */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <Link to="/" className="inline-block mb-5 group">
-                            <img src="/logo-white.png" alt="Shimmer Plano Events" className="h-20 w-auto object-contain mb-3 transition-transform duration-300 group-hover:scale-105" />
-                            <p className="text-gold text-lg font-bold" style={{ fontFamily: 'var(--font-heading)' }}>Shimmer Plano Events</p>
+                            <img src="/logo-white.png" alt="LRWC" className="h-20 w-auto object-contain mb-3 transition-transform duration-300 group-hover:scale-105" />
+                            <p className="text-gold text-lg font-bold" style={{ fontFamily: 'var(--font-heading)' }}>LRWC</p>
                         </Link>
                         <p className="text-sm leading-relaxed text-white/40 mb-3 italic">
                             Wedding & Event Planning Experts
@@ -144,12 +148,12 @@ export default function Footer() {
                     </div>
 
                     {/* Services */}
-                    <div>
-                        <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-6 relative inline-block">
+                    <div className="lg:col-span-2">
+                        <h4 className="text-white font-semibold text-sm tracking-wider uppercase mb-6 relative block text-center">
                             Our Services
-                            <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-gold to-transparent" />
+                            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-gold to-transparent" />
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
                             {services.map((service) => (
                                 <li key={service}>
                                     <Link
@@ -179,7 +183,7 @@ export default function Footer() {
                                 </span>
                                 <div className="leading-relaxed">
                                     Faridabad, Haryana<br />
-                                    <span className="text-[10px] text-gold/60 uppercase tracking-widest">(Serving Delhi-NCR)</span>
+                                    <span className="text-[10px] text-gold/60 uppercase tracking-widest">(Serving All Over India)</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -222,7 +226,7 @@ export default function Footer() {
             <div className="border-t border-white/8 relative z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-xs text-white/25">
-                        © 2026 Shimmer Plano Events. All rights reserved.
+                        © 2026 Lalita Raghav Wedding Consultants- LRWC. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-xs text-white/25">
                         <a href="#" className="hover:text-gold transition-colors duration-300">Privacy Policy</a>
